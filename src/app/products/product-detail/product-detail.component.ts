@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product.interface';
 
 @Component({
@@ -10,11 +11,16 @@ export class ProductDetailComponent implements OnInit {
 
   @Input() product: Product;
 
-  constructor() {
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {
 
    }
 
   ngOnInit(): void {
+    let id = this.activatedRoute.snapshot.params.id;
+
+
   }
 
 }
